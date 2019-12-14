@@ -1,0 +1,10 @@
+from http.cookiejar import CookieJar
+from urllib.request import HTTPCookieProcessor,build_opener
+jar = CookieJar()
+opener= build_opener(HTTPCookieProcessor(jar))
+opener.open('http://www.github.com')
+cookies = list(jar)
+for item in cookies:    
+    print(item.name)
+    print(item.value)
+    print('##############')
