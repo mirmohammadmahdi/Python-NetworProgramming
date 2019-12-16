@@ -1,0 +1,5 @@
+from urllib.request import Request,urlopen
+req = Request('http://www.gmail.com')
+res=urlopen(req)
+print('responce url',res.url)
+print('Redirect dict',req.redirect_dict)
