@@ -1,0 +1,3 @@
+import requests
+rs= requests.get('http://www.google.com/fakeaddress')
+rs.raise_for_status()
