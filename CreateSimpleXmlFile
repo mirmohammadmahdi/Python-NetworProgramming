@@ -1,0 +1,13 @@
+import xml.etree.ElementTree as et
+import xml.dom.minidom as minidom
+root=et.Element('Inventory')
+for i in range(20):
+    Stock= et.Element('Stock{0}'.format(i))
+    root.append(Stock)
+    stockElement = et.SubElement(Stock,'StockElement{0}'.format(i))
+    stockElement.text = 'StockElementText{0}'.format(i)
+def xml_Print(element):
+    s=et.tostring(element)
+    print(minidom.parseString(s).toprettyxml())
+    
+xml_Print(root)
